@@ -4,14 +4,19 @@
 # 猜錯的話 要告訴他 比答案大/小
 
 import random
+
 r = random.randint(1,100)
+count = 0 # 不能寫在while迴圈裡面，不然會一直歸零
 while True:
+	count +=1 # count = count + 1
 	num = input('請猜數字: ')
 	num = int(num) # 型別轉換
-	if num == r:
+	if num == r: # 17~20都是在if架構裡面，如果要寫在裡面要重複寫3次
 		print('你猜中了')
+		print('這是你猜的第', count, '次')
 		break
 	elif num > r:
 		print('比答案大')
 	elif num < r:
 		print('比答案小')
+	print('這是你猜的第', count, '次')
